@@ -1,0 +1,5 @@
+banka1 = deneme123
+banka2 = qwer321
+sosyal_medya1 = 159zxc
+sosyal_medya2 = asdfgh98765
+sosyal_medya3 = 753214785
