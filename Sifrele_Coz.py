@@ -1,39 +1,6 @@
-
 # =============================================================================
-# Asagidaki 97 adet karakter bulunan Alfabeden, Rastgele secim yapılarak Key ve Value içeren sozluk üretilecek. 
-# Sifreleme ve cozme isleminde oluşturulacak Sozluk Üretiminde Kullanilacak olan (izin verilen) Karakterler
-# alf = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'ç', 'd', 'e', 'f', 'g', 'ğ', 'h', 'ı', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'ö', 'q', 'p', 'r', 's', 'ş', 't', 'u', 'ü', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'Q', 'P', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', '+', '-', '*', '/', '!', "'", '^', '%', '&', '(', ')', '=', '?', '#', '$', '{', '}', '[', ']', '\\', '_', '|', ' ']
-# =============================================================================
-
-import random
-
-alf = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'ç', 'd', 'e', 'f', 'g', 'ğ', 'h', 'ı', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'ö', 'q', 'p', 'r', 's', 'ş', 't', 'u', 'ü', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'Ç', 'D', 'E', 'F', 'G', 'Ğ', 'H', 'I', 'İ', 'J', 'K', 'L', 'M', 'N', 'O', 'Ö', 'Q', 'P', 'R', 'S', 'Ş', 'T', 'U', 'Ü', 'V', 'W', 'X', 'Y', 'Z', '+', '-', '*', '/', '!', "'", '^', '%', '&', '(', ')', '=', '?', '#', '$', '{', '}', '[', ']', '\\', '_', '|', ' ']
-
-keys = ""
-values = ""
-
-sozluk_key = {}     # Metin şifrelerken kullanılacak sözlük
-sozluk_value = {}   # Şifreli metin çözülürken kullanılacak sözlük
-
-while len(keys) < len(alf):     # Rastgele seçimler yaparak, benzersiz (tekrarlamasiz) karakterleri "keys" stingine ekle.
-    secim = random.choice(alf)
-    if secim not in keys:
-        keys += secim
-
-while len(values) < len(alf):   # Rastgele seçimler yaparak, benzersiz (tekrarlamasiz) karakterleri "values" stingine ekle.
-    secim = random.choice(alf)
-    if secim not in values:
-        values += secim
-
-for indis in range(len(alf)):   # rastgele oluşturulan "keys" ve "values" stringlerindeki ayni indisteki karakterleiri eşleyerek sozluk yapılarını olustur.
-    sozluk_key[keys[indis]] = values[indis]
-    sozluk_value[values[indis]] = keys[indis]
-    
-#print("Anahtar_Deger =", sozluk_key)    
-#print("Deger_Anahtar =", sozluk_value)    
-
-# =============================================================================
-# Yukarıdaki kodlar ile Oluşturulan Şifreleme ve Çözme Sözlükleri Kullanılarak istenilen metinler Şifreleniyor ve çözülüyor.
+# "Sifre_icin_Sozluk_Olustur.py" dosyasi ile Olusturulan Sifreleme ve Cozme Sozlukleri Kullanılarak istenilen metinler Sifreleniyor ve Cozuluyor.
+# "Sifre_icin_Sozluk_Olustur.py" dosyasi calistirildigi zaman Olusturulan benzersiz "Anahtar_Deger" ve "Deger_Anahtar" Sozluk icerikleri, asagidaki sozluk ile degistirilmeli !!! Ornek Sozlukler asagidadir.
 # =============================================================================
 
 Anahtar_Deger = {'h': 'k', 'W': '$', 'ş': '_', 'Ş': 'A', 'F': ' ', 'L': '#', '-': '&', '|': 'Ü', '*': '^', 'Z': 'T', '%': 'B', ']': '/', 't': '+', 'X': '-', '2': '2', 'M': 'ö', 'g': 'c', '9': 'H', 'P': 'z', '[': 'r', ' ': 'D', 'y': 'i', '$': ']', '5': 'n', '6': 'Ş', 'I': 'a', '/': 'Ç', 'Y': '=', 'S': 'K', 'Q': "'", 'ö': 'F', '\\': 'v', 'Ö': 'W', 'T': 'x', 'Ü': 'p', 'o': '1', 'ı': 'S', 'a': '\\', 'R': 'P', 'l': 'ç', '+': 'm', 'J': 'E', '7': '3', '3': 'j', '(': '0', 'C': 't', 'Ç': 'I', 'B': 'Ö', 'N': '8', 'k': 'Y', 'f': '5', '^': 'q', 'r': '9', '_': 'G', 's': '{', '8': 'Q', 'ü': 'e', '1': 'N', '4': '|', 'K': 'l', 'ç': 'u', 'q': '!', 'H': 'Ğ', 'j': 'U', '!': '*', '&': 'y', 'c': '}', '}': '[', '0': 'X', 'O': 'o', 'x': 'İ', 'd': '?', 'E': 'M', 'b': 'g', 'Ğ': 'ı', 'İ': '6', 'G': 'J', ')': 'ğ', 'p': 'w', '?': '%', 'V': 'O', 'i': 'ş', 'w': 's', 'A': '7', 'z': 'ü', 'n': 'd', '{': 'h', '#': 'L', 'ğ': '(', 'm': 'Z', 'U': 'b', 'e': 'R', '=': '4', "'": ')', 'v': 'V', 'u': 'C', 'D': 'f'}
@@ -56,6 +23,7 @@ def coz():
 
     for karakter in cozulecek_metin:
         metnin_sifresiz_hali += Deger_Anahtar[karakter]
-    print("Çözülmüş Metin", metnin_sifresiz_hali)
+    print("Çözülmüş Metin:", metnin_sifresiz_hali)
 
 coz()
+
