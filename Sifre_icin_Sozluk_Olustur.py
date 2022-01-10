@@ -11,8 +11,8 @@ alf = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'ç', 'd
 keys = ""
 values = ""
 
-sozluk_key = {'.':'.'} # Metin şifrelerken kullanılacak sözlük
-sozluk_value = {'.':'.'} # Şifreli metin çözülürken kullanılacak sözlük
+sozluk_key = {'.':'.', , '\t':'\t'} # Metin şifrelerken kullanılacak sözlük
+sozluk_value = {'.':'.', , '\t':'\t'} # Şifreli metin çözülürken kullanılacak sözlük
 
 while len(keys) < len(alf): # Rastgele seçimler yaparak, benzersiz (tekrarlamasiz) karakterleri "keys" stingine ekle.
     secim = random.choice(alf)
